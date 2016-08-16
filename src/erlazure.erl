@@ -735,7 +735,7 @@ execute_request(ServiceContext = #service_context{}, ReqContext = #req_context{}
           {ok, {{_, _, _}, _, Body}} ->
                throw(Body)
 
-          {error, {{_, Code, _}, _, Body}} ->
+          {error, Body} ->
                throw(Body)
         end.
 
