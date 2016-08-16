@@ -734,6 +734,9 @@ execute_request(ServiceContext = #service_context{}, ReqContext = #req_context{}
 
           {ok, {{_, _, _}, _, Body}} ->
                throw(Body)
+
+          {error, {{_, Code, _}, _, Body}} ->
+               throw(Body)
         end.
 
 get_shared_key(Service, Account, Key, HttpMethod, Path, Parameters, Headers) ->
